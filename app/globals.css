@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  /* fonts */
+  --font-primary: "Teko";
+  --font-secondary: "Poppins";
+  /* colors */
+  --color-primary: #252525;
+  --color-secondary: #6d6d6d;
+  --color-accent: #cbfe01;
+  --color-accent: #f13697;
+  --color-accent-hover: #c20869;
+  --color-accent2: #89b700;
+  --color-grey-50: #f6f6f6;
+  --color-grey-100: #f7f7f7;
+  --color-grey-200: #d1d1d1;
+  --color-grey-300: #b0b0b0;
+  --color-grey-400: #6d6d6d;
+  --color-grey-500: #4f4f4f;
+
+  /* breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1200px;
+}
+
+body {
+  @apply font-secondary text-secondary bg-grey-200;
+}
+
+a.link-primary {
+  @apply uppercase font-semibold transition-all duration-300;
+}
+
+a.link-secondary {
+  @apply hover:text-primary transition-all duration-300;
+}
+
+.container {
+  @apply px-4 lg:px-0 mx-auto;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @apply text-primary;
+}
+.h1 {
+  @apply font-primary text-[45px] xl:text-[100px] leading-none;
+}
+.h2 {
+  @apply text-[36px] tracking-[-0.02em] leading-[44px] font-semibold;
+}
+.h3 {
+  @apply text-[20px] font-semibold;
+}
+.lead {
+  @apply text-xl;
+}
+
+.btn {
+  @apply m-0 min-w-[180px] max-w-[260px] h-[56px] px-8 font-medium text-white flex items-center justify-center cursor-pointer;
+}
+
+.btn-icon {
+  @apply w-[52px] h-[52px] flex items-center justify-center cursor-pointer;
+}
+
+.btn-outline {
+  @apply border border-grey-200;
+}
+
+.btn-accent {
+  @apply bg-accent hover:bg-accent-hover transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary/90 text-white transition-all duration-300;
+}
+
+.input {
+  @apply h-[54px] border border-grey-200 outline-none;
+}
+
+/* swiper */
+.swiper-scrollbar {
+  @apply !bg-grey-50;
+}
+
+.swiper-scrollbar-drag {
+  @apply !bg-primary;
+}
