@@ -145,7 +145,7 @@ export default function Customizer() {
         <div className="flex gap-2">
           <button
             onClick={() => switchView("front")}
-            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center rounded-xl border bg-white backdrop-blur shadow-sm ${
+            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center rounded-xl border bg-gray-100 backdrop-blur shadow-lg ${
               view === "front" ? "border-accent border-4" : "border-gray-200"
             }`}
           >
@@ -154,7 +154,7 @@ export default function Customizer() {
 
           <button
             onClick={() => switchView("side")}
-            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center gap-0 rounded-xl border  bg-gray-100 backdrop-blur p-4 shadow-sm ${
+            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center gap-0 rounded-xl border  bg-gray-100 backdrop-blur p-4 shadow-lg ${
               view === "side" ? "border-accent border-4" : "border-gray-200"
             }`}
           >
@@ -162,21 +162,21 @@ export default function Customizer() {
             <img src="./bag_symbol_side.png" width={70} alt="" />
           </button>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col gap-2 mt-20">
           <button
             onClick={handleAddText}
-            className="h-20 w-20  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 backdrop-blur p-4 shadow-sm "
+            className="h-40 w-40  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 backdrop-blur p-4 shadow-lg "
           >
-            <span className="text-4xl">
+            <span className="text-8xl">
               <RiText />
             </span>
           </button>
 
           <button
             onClick={openFilePicker}
-            className="h-20 w-20  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 backdrop-blur p-4 shadow-sm"
+            className="h-40 w-40  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 backdrop-blur p-4 shadow-lg"
           >
-            <span className="text-4xl">
+            <span className="text-8xl">
               <RiImageLine />
             </span>
           </button>
@@ -188,14 +188,6 @@ export default function Customizer() {
             onChange={handleFileSelected}
           />
 
-          <button
-            onClick={handleDeleteSelected}
-            className="h-20 w-20 transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-red-50 backdrop-blur p-4 shadow-sm"
-          >
-            <span className="text-4xl text-red-600">
-              <RiDeleteBin3Line />
-            </span>
-          </button>
         </div>
       </div>
 
