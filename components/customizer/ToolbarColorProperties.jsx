@@ -125,7 +125,7 @@ export default function ToolbarColorProperties({
             key={s}
             onClick={() => onChangeColors?.({ strap: s })}
             className={[
-              "h-10 w-10 md:h-15 md:w-15 rounded-md border-2 transition-colors",
+              "h-10 w-10 md:h-15 md:w-15 rounded-md border-2 transition-colors cursor-pointer",
               colorBg[s],
               strap === s ? "border-black" : "border-transparent hover:border-neutral-300",
             ].join(" ")}
@@ -135,14 +135,14 @@ export default function ToolbarColorProperties({
       </div>
 
       {/* Látka */}
-      <div className="flex md:flex-col items-center gap-1 flex-wrap">
+      <div className="flex md:flex-col items-center gap-2 flex-wrap">
         <span className="text-sm mr-1">Taška</span>
         {fabricOptions.map((f) => (
           <button
             key={f}
             onClick={() => onChangeColors?.({ fabric: f })}
             className={[
-              "h-10 w-10 md:h-15 md:w-15 rounded-md border-2 transition-colors",
+              "h-10 w-10 md:h-15 md:w-15 rounded-md border-2 transition-colors cursor-pointer",
               colorBg[f],
               fabric === f ? "border-black" : "border-transparent hover:border-neutral-300",
             ].join(" ")}

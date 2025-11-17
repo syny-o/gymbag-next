@@ -145,7 +145,7 @@ export default function Customizer() {
         <div className="flex gap-2">
           <button
             onClick={() => switchView("front")}
-            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center rounded-xl border bg-gray-100 backdrop-blur shadow-lg ${
+            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center rounded-xl border bg-gray-100 backdrop-blur shadow-lg cursor-pointer hover:bg-gray-200 duration-300 ${
               view === "front" ? "border-accent border-4" : "border-gray-200"
             }`}
           >
@@ -154,7 +154,7 @@ export default function Customizer() {
 
           <button
             onClick={() => switchView("side")}
-            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center gap-0 rounded-xl border  bg-gray-100 backdrop-blur p-4 shadow-lg ${
+            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center gap-0 rounded-xl border  bg-gray-100 backdrop-blur p-4 shadow-lg cursor-pointer hover:bg-gray-200 duration-300 ${
               view === "side" ? "border-accent border-4" : "border-gray-200"
             }`}
           >
@@ -165,18 +165,21 @@ export default function Customizer() {
         <div className="flex flex-col gap-2 mt-20">
           <button
             onClick={handleAddText}
-            className="h-40 w-40  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 backdrop-blur p-4 shadow-lg "
+            className="h-40 w-40  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 hover:bg-blue-100 backdrop-blur p-4 shadow-lg cursor-pointer duration-300"
+            title="Přidat text"
           >
-            <span className="text-8xl">
+            <span className="text-7xl">
               <RiText />
             </span>
           </button>
 
           <button
             onClick={openFilePicker}
-            className="h-40 w-40  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 backdrop-blur p-4 shadow-lg"
+            className="h-40 w-40  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-red-50 backdrop-blur p-4 shadow-lg cursor-pointer duration-300 hover:bg-red-100"
+            title="Přidat obrázek"
+
           >
-            <span className="text-8xl">
+            <span className="text-7xl">
               <RiImageLine />
             </span>
           </button>
@@ -233,8 +236,8 @@ export default function Customizer() {
         tick={canvasTick} // 👈 jen aby efekt proběhl, ne jako key!
       />
 
-      <div className="mt-15 flex-col md:flex-row gap-10 items-center justify-center">
-        <button className="btn btn-accent mb-8 text-white">
+      <div className="flex gap-10 items-center justify-center">
+        <button className="btn btn-accent rounded text-white">
           <span className="pr-2 text-2xl">
             <RiSave2Line />
           </span>
@@ -244,7 +247,7 @@ export default function Customizer() {
           <h2 className="h2">299,- Kč</h2>
           <p>Cena včetně DPH, bez poštovného</p>
         </div>
-        <button className="btn btn-accent mb-8 text-white">
+        <button className="btn btn-accent rounded text-white">
           <span className="pr-2 text-2xl">
             <RiShoppingCartLine />
           </span>
