@@ -37,7 +37,7 @@ export default function ToolbarProperties({ canvas }) {
   if (!selectedObject) return null;
 
   return (
-    <div className="w-full max-w-[600px] mx-auto p-3 rounded-lg md:absolute top-35 z-50">
+    <div className="w-full md:max-w-[600px] mx-auto pb-3 rounded-lg md:absolute top-35 z-50">
       <div className="text-sm text-neutral-600 mb-3">
         {/* Selected: {selectedObject.type} */}
       </div>

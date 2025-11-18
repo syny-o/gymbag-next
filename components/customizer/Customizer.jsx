@@ -125,27 +125,15 @@ export default function Customizer() {
     reader.readAsDataURL(file);
   };
 
-  const handleDeleteSelected = () => {
-    const canvas = canvases.current[view];
-    if (!canvas) return;
-
-    const selected = canvas.getActiveObjects?.() || [];
-    if (selected.length === 0) return;
-
-    selected.forEach((obj) => canvas.remove(obj));
-    canvas.discardActiveObject();
-    canvas.requestRenderAll();
-    savedJSON.current[view] = canvas.toJSON();
-  };
 
   return (
-    <section className="container mx-auto flex flex-col items-center relative my-20">
+    <section className="container flex flex-col items-center relative my-10 overflow-hidden">
       <h1 className="h1 mb-10">Přizpůsobit</h1>
-      <div className="md:absolute left-0 top-40 flex flex-col gap-2 z-10 justify-center items-center">
-        <div className="flex gap-2">
+      <div className="md:absolute left-0 top-40 flex flex-col gap-2 z-10 justify-center items-center md:items-start w-full md:w-auto">
+        <div className="flex gap-2 w-full">
           <button
             onClick={() => switchView("front")}
-            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center rounded-xl border bg-gray-100 backdrop-blur shadow-lg cursor-pointer hover:bg-gray-200 duration-300 ${
+            className={`h-35 w-1/2 md:w-35 transition-colors flex flex-col justify-center items-center rounded-xl border bg-gray-100 backdrop-blur shadow-lg cursor-pointer hover:bg-gray-200 duration-300 ${
               view === "front" ? "border-accent border-4" : "border-gray-200"
             }`}
           >
@@ -154,7 +142,7 @@ export default function Customizer() {
 
           <button
             onClick={() => switchView("side")}
-            className={`h-25 w-25 transition-colors flex flex-col justify-center items-center gap-0 rounded-xl border  bg-gray-100 backdrop-blur p-4 shadow-lg cursor-pointer hover:bg-gray-200 duration-300 ${
+            className={`h-35 w-1/2 md:w-35 transition-colors flex flex-col justify-center items-center gap-0 rounded-xl border  bg-gray-100 backdrop-blur p-4 shadow-lg cursor-pointer hover:bg-gray-200 duration-300 ${
               view === "side" ? "border-accent border-4" : "border-gray-200"
             }`}
           >
@@ -162,10 +150,10 @@ export default function Customizer() {
             <img src="./bag_symbol_side.png" width={70} alt="" />
           </button>
         </div>
-        <div className="flex flex-col gap-2 mt-20">
+        <div className="flex md:flex-col gap-2 mt-8 md:mt-20">
           <button
             onClick={handleAddText}
-            className="h-40 w-40  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 hover:bg-blue-100 backdrop-blur p-4 shadow-lg cursor-pointer duration-300"
+            className="h-25 w-25 md:h-35 md:w-35 transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-blue-50 hover:bg-blue-100 backdrop-blur p-4 shadow-lg cursor-pointer duration-300"
             title="Přidat text"
           >
             <span className="text-7xl">
@@ -175,7 +163,7 @@ export default function Customizer() {
 
           <button
             onClick={openFilePicker}
-            className="h-40 w-40  transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-red-50 backdrop-blur p-4 shadow-lg cursor-pointer duration-300 hover:bg-red-100"
+            className="h-25 w-25 md:h-35 md:w-35 transition-colors flex justify-center items-center rounded-xl border border-gray-200 bg-red-50 backdrop-blur p-4 shadow-lg cursor-pointer duration-300 hover:bg-red-100"
             title="Přidat obrázek"
 
           >
@@ -195,7 +183,7 @@ export default function Customizer() {
       </div>
 
       {/* CANVAS WRAPPER */}
-      <div className="relative w-full max-w-[900px] h-[800px] mx-auto">
+      <div className="relative w-full max-w-[900px] h-[320px] md:h-[800px] mx-auto">
         <ResponsiveBagCanvas
           imgSrc="/bag_front.png"
           initialJSON={savedJSON.current.front}
@@ -236,7 +224,7 @@ export default function Customizer() {
         tick={canvasTick} // 👈 jen aby efekt proběhl, ne jako key!
       />
 
-      <div className="flex gap-10 items-center justify-center">
+      <div className="flex flex-col md:flex-row gap-10 items-center justify-center mt-10 md:mt-0">
         <button className="btn btn-accent rounded text-white">
           <span className="pr-2 text-2xl">
             <RiSave2Line />

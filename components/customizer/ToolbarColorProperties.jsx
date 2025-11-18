@@ -28,7 +28,14 @@ export default function ToolbarColorProperties({
   const loadTokenRef = useRef({ front: 0, side: 0 });
 
   const strapOptions = ["black", "white"];
-  const fabricOptions = ["black", "blue", "green", "grey", "ping", "red", "white"];
+  const fabricOptions = [
+    "black",
+    "blue",
+    "green",
+    "grey",
+    "ping",
+    "red",
+  ];
 
   const colorBg = {
     black: "bg-black",
@@ -65,7 +72,13 @@ export default function ToolbarColorProperties({
     }
   };
 
-  const applyBackground = async (canvas, viewName, s, f, key /* 'front'|'side' */) => {
+  const applyBackground = async (
+    canvas,
+    viewName,
+    s,
+    f,
+    key /* 'front'|'side' */
+  ) => {
     if (!canvas || !fabricRef) return;
 
     const ready = await ensureCanvasSized(canvas);
@@ -116,18 +129,20 @@ export default function ToolbarColorProperties({
   if (!frontCanvas && !sideCanvas) return null;
 
   return (
-    <div className="md:absolute z-5 right-0 top-34 p-5 shadow-lg flex flex-col md:flex-row gap-3 border-2 rounded-lg border-gray-200 bg-gray-100">
+    <div className="md:absolute z-5 right-0 top-34 p-5 shadow-lg flex flex-col gap-3 border-2 rounded-lg border-gray-200 bg-gray-100">
       {/* Popruh */}
-      <div className="flex md:flex-col items-center gap-2 flex-wrap">
-        <span className="text-sm mr-2">Popruh</span>
+      <span className="text-sm mr-2 text-center">Barva popruhu</span>
+      <div className="flex md:flex-col items-center justify-center gap-2 flex-wrap">
         {strapOptions.map((s) => (
           <button
             key={s}
             onClick={() => onChangeColors?.({ strap: s })}
             className={[
-              "h-10 w-10 md:h-15 md:w-15 rounded-md border-2 transition-colors cursor-pointer",
+              "h-15 w-15 rounded-md border-2 transition-colors cursor-pointer",
               colorBg[s],
-              strap === s ? "border-black" : "border-transparent hover:border-neutral-300",
+              strap === s
+                ? "border-black"
+                : "border-transparent hover:border-neutral-300",
             ].join(" ")}
             aria-label={s}
           />
@@ -135,16 +150,18 @@ export default function ToolbarColorProperties({
       </div>
 
       {/* Látka */}
-      <div className="flex md:flex-col items-center gap-2 flex-wrap">
-        <span className="text-sm mr-1">Taška</span>
+      <span className="text-sm mr-1 text-center">Barva tašky</span>
+      <div className="flex md:flex-col items-center justify-center gap-2 flex-wrap">
         {fabricOptions.map((f) => (
           <button
             key={f}
             onClick={() => onChangeColors?.({ fabric: f })}
             className={[
-              "h-10 w-10 md:h-15 md:w-15 rounded-md border-2 transition-colors cursor-pointer",
+              "h-15 w-15 rounded-md border-2 transition-colors cursor-pointer",
               colorBg[f],
-              fabric === f ? "border-black" : "border-transparent hover:border-neutral-300",
+              fabric === f
+                ? "border-black"
+                : "border-transparent hover:border-neutral-300",
             ].join(" ")}
             aria-label={f}
           />

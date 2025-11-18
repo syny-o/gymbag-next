@@ -52,7 +52,7 @@ a.link-secondary {
   @apply text-primary;
 }
 .h1 {
-  @apply font-primary text-[45px] xl:text-[100px] leading-none;
+  @apply font-primary text-[60px] xl:text-[100px] leading-none;
 }
 .h2 {
   @apply text-[36px] tracking-[-0.02em] leading-[44px] font-semibold;

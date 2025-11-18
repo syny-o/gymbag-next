@@ -15,9 +15,9 @@ const Category = () => {
           </Link>
         </div>
         {/* img grid */}
-        <div className="grid grid-cols-3 gap-4 xl:gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 xl:gap-10 mb-10">
           {/* img 1 */}
-          <div className="relative w-full h-[146px] sm:h-[416px] xl:h-[496px]">
+          <div className="relative w-full h-[346px] sm:h-[416px] xl:h-[496px]">
             <Image
               src="/assets/img/category/model-side.jpg"
               fill
@@ -27,7 +27,7 @@ const Category = () => {
             />
           </div>
           {/* img 2 */}
-          <div className="relative w-full h-[146px] sm:h-[416px] xl:h-[496px]">
+          <div className="relative w-full h-[346px] sm:h-[416px] xl:h-[496px]">
             <Image
               src="/assets/img/category/model-back.jpg"
               fill
@@ -37,7 +37,7 @@ const Category = () => {
             />
           </div>
           {/* img 3 */}
-          <div className="relative w-full h-[146px] sm:h-[416px] xl:h-[496px]">
+          <div className="relative w-full h-[346px] sm:h-[416px] xl:h-[496px]">
             <Image
               src="/assets/img/category/model-front.jpg"
               fill
